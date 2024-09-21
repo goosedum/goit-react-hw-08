@@ -23,7 +23,13 @@
 .formBtn:hover {
     color:#535bf2;
 }
-
+.input {
+     padding: 12px;
+     font-size: 18px;
+     border: 1px solid gray;
+     border-radius: 8px;
+     outline: none;
+ }
 .inputContainer {
 padding: 12px;
     font-size: 18px;
@@ -31,9 +37,7 @@ padding: 12px;
     border-radius: 8px;
     outline: none;
     width: 250px;
-    gap: 10px; ;
-    flex-direction: column;
-    align-items: center;
+    gap: 10px;
 }
 
 .input:focus {
