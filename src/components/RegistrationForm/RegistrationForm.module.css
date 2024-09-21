@@ -13,12 +13,12 @@
 .formBtn {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 4px 8px;
     width: 200px;
     border-radius: 8px;
     background-color: inherit;
     transition: color 200ms ease-in-out;
+    gap: 10px;;
 }
 
 .formBtn:hover {
