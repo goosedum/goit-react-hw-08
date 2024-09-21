@@ -7,3 +7,12 @@
     border: 1px solid #000000;
     padding: 15px;
 }
+.input {
+    width: 230px;
+    padding: 4px 4px;
+    font-size: 18px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.126);
+}
