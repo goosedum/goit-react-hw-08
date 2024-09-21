@@ -13,6 +13,7 @@
 .formBtn {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 4px 8px;
     width: 200px;
     border-radius: 8px;
