@@ -10,6 +10,7 @@
     transition: color 200ms ease-in-out;
     margin-left: auto;
     margin-top: auto;
+    margin-bottom: auto;
 }
 
 .logoutBtn:hover {
