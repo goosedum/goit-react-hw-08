@@ -8,8 +8,8 @@ const Loader = () => {
       width="80"
       ariaLabel="magnifying-glass-loading"
       wrapperClass="magnifying-glass-wrapper"
-      glassColor="#c0efff"
-      color="blue"
+      glassColor="gray"
+      color="#0d00c3"
     />
   );
 };
