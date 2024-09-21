@@ -3,12 +3,13 @@
     align-items: center;
     justify-content: center;
     background-color: inherit;
-   height: 40px;
+    height: 40px;
     border-radius: 8px;
     padding: 4px 8px;
     gap: 8px;
     transition: color 200ms ease-in-out;
     margin-left: auto;
+    margin-top: auto;
 }
 
 .logoutBtn:hover {
