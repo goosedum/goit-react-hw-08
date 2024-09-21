@@ -15,6 +15,6 @@
 }
 
 .link:hover {
-    color: #09008D;
+    color:gray;
     text-decoration: underline;
 }
