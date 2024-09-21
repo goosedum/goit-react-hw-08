@@ -24,11 +24,13 @@
     color:#09008D;
 }
 .input {
+    width: 200px;;
     padding: 4px;
      font-size: 18px;
      border: 1px solid gray;
      border-radius: 8px;
      outline: none;
+     background-color:rgba(0, 0, 0, 0.126);
  }
 .inputContainer {
 padding: 12px;
