@@ -1,70 +1,91 @@
-import { useState } from 'react'; 
+import css from './ContactForm.module.css';
+import * as Yup from 'yup';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
+import { nanoid } from 'nanoid';
+import toast from 'react-hot-toast';
+
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/operations'; 
-import * as Yup from 'yup'; 
-import { Button, TextField } from '@mui/material';
+import { addContact } from '../../redux/contacts/operations';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  
-  
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
 
-  
-  const phoneRegExp = /^(\+?[1-9]{1,4}[-\s]?|[0-9]{2,4}[-\s]?)?[0-9]{3,4}[-\s]?[0-9]{3,4}$/;
-
-  
-  const validationSchema = Yup.object().shape({
-    name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required'),
-    number: Yup.string().matches(phoneRegExp, 'Phone number is not valid').required('Required'),
-  });
-
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    
-    validationSchema
-      .validate({ name, number })
+  const onAddContact = (values, actions) => {
+    dispatch(addContact(values))
+      .unwrap()
       .then(() => {
-        
-        dispatch(addContact({ name, number }));
-        
-        setName('');
-        setNumber('');
-      })
-      .catch((error) => {
-        console.error('Validation Error:', error);
+        toast.success('Contact was added successfully', {
+          style: {
+            border: '1px solid rgb(0, 106, 255)',
+            padding: '16px',
+            color: 'rgb(0, 106, 255)',
+          },
+          iconTheme: {
+            primary: 'rgb(0, 226, 45)',
+            secondary: '#FFFAEE',
+          },
+        });
       });
+    actions.resetForm();
   };
 
+  const nameId = nanoid();
+  const numberId = nanoid();
+
+  const validationSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(3, 'Name is too short')
+      .max(50, 'Name is too long')
+      .required('Name is required'),
+    number: Yup.string()
+      .required('Number is required')
+      .min(3, 'Number is too short')
+      .max(50, 'Number is too long'),
+  });
+
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        label="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)} 
-        variant="outlined"
-        fullWidth
-        margin="normal"
-        required
-        helperText="Please enter your name"
-      />
-      <TextField
-        label="Phone number"
-        value={number}
-        onChange={(e) => setNumber(e.target.value)} 
-        variant="outlined"
-        fullWidth
-        margin="normal"
-        required
-        helperText="Please enter your phone number"
-      />
-      <Button variant="contained" color="primary" type="submit">
-        Save
-      </Button>
-    </form>
+    <Formik
+      initialValues={{
+        name: '',
+        number: '',
+      }}
+      onSubmit={onAddContact}
+      validationSchema={validationSchema}
+    >
+      <Form className={css.form}>
+        <div className={css.inputContainer}>
+          <label htmlFor={nameId}>Name</label>
+          <Field
+            type="text"
+            name="name"
+            id={nameId}
+            className={css.input}
+          ></Field>
+          <ErrorMessage
+            className={css.errorMessage}
+            name="name"
+            component="span"
+          />
+        </div>
+        <div className={css.inputContainer}>
+          <label htmlFor={numberId}>Number</label>
+          <Field
+            type="text"
+            name="number"
+            id={numberId}
+            className={css.input}
+          ></Field>
+          <ErrorMessage
+            className={css.errorMessage}
+            name="number"
+            component="span"
+          />
+        </div>
+        <button type="submit" className={css.formBtn}>
+          Add contact
+        </button>
+      </Form>
+    </Formik>
   );
 };
 

@@ -1,13 +1,25 @@
-.link{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
+.linksContainer {
+    display: flex;
+    gap: 20px;
 }
 
-.active{
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    color: black;
+    font-size: larger;
+    font-weight: 700;
     text-decoration: none;
-    color: rgb(23, 12, 165);
-    font-size: 20px;
-    font-weight: bold;
+}
+
+.active {
+    color: rgb(0, 106, 255);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(0, 106, 255);
+    text-decoration: underline;
 }

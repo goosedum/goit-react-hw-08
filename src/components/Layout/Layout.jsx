@@ -1,14 +1,12 @@
-import { Outlet } from 'react-router-dom';
 import AppBar from '../AppBar/AppBar';
-import css from './Layout.module.css';
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <>
-      <AppBar /> 
-      <main className={css.main}>
-        <Outlet /> 
-      </main>
+      <header>
+        <AppBar />
+      </header>
+      {children}
     </>
   );
 };

@@ -1,29 +1,51 @@
-import { BsPersonFill } from "react-icons/bs";
-import { FaPhone } from "react-icons/fa6";
 import css from './Contact.module.css';
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations"; 
-import PropTypes from 'prop-types';
-const Contact = ({ contact }) => {
-  const dispatch = useDispatch();
-  return (
-    <li className={css.contactItem}>
-      <div>
-        <span className={css.dataText}><BsPersonFill /> {contact.name}</span><br />
-        <span className={css.dataText}><FaPhone /> {contact.number}</span>
-      </div>
-          
-      <button type="button" className={css.contactBtnDel} onClick={() => dispatch(deleteContact(contact.id))}> Delete </button>
-    </li>
-  )
-};
+import { FaUser } from 'react-icons/fa';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { MdDeleteForever } from 'react-icons/md';
+import toast from 'react-hot-toast';
 
-Contact.propTypes = {
-  contact: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  }),
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contacts/operations';
+
+const Contact = ({ name, number, id }) => {
+  const dispatch = useDispatch();
+  const onDeleteContact = id => {
+    dispatch(deleteContact(id))
+      .unwrap()
+      .then(() => {
+        toast.success('Contact was deleted successfully', {
+          style: {
+            border: '1px solid rgb(0, 106, 255)',
+            padding: '16px',
+            color: 'rgb(0, 106, 255)',
+          },
+          iconTheme: {
+            primary: 'rgb(0, 226, 45)',
+            secondary: '#FFFAEE',
+          },
+        });
+      });
+  };
+
+  return (
+    <div className={css.contactContainer}>
+      <p className={css.text}>
+        <FaUser className={css.userIcon} />
+        {name}
+      </p>
+      <p className={css.text}>
+        <BsFillTelephoneFill className={css.userIcon} />
+        {number}
+      </p>
+      <button
+        className={css.deleteBtn}
+        type="button"
+        onClick={() => onDeleteContact(id)}
+      >
+        <MdDeleteForever className={css.deleteIcon} />
+      </button>
+    </div>
+  );
 };
 
 export default Contact;

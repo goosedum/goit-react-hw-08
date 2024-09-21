@@ -1,7 +1,14 @@
-.contactList{
-    list-style-type: none; 
-    padding: 0 15px ;
+.list {
     display: flex;
     flex-wrap: wrap;
+    height: fit-content;
     gap: 10px;
+}
+
+.emptyText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    min-width: 600px;
 }

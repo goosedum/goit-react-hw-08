@@ -1,17 +1,28 @@
+import css from './ContactsPage.module.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from '../../redux/contacts/operations';
 
-import ContactForm from "../../components/ContactForm/ContactForm";
-import ContactList from "../../components/ContactList/ContactList";
-import SearchBox from "../../components/SearchBox/SearchBox";
-
+import ContactList from '../../components/ContactList/ContactList';
+import SearchBox from '../../components/SearchBox/SearchBox';
+import ContactForm from '../../components/ContactForm/ContactForm';
 
 const ContactsPage = () => {
-  return (
-    <>
-      <ContactForm />
-      <SearchBox />
-      <ContactList />
-    </>
-  )
-}
+  const dispatch = useDispatch();
 
-export default ContactsPage
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  return (
+    <div className={css.pageContainer}>
+      <div className={css.formContainer}>
+        <ContactForm />
+        <SearchBox />
+      </div>
+      <ContactList />
+    </div>
+  );
+};
+
+export default ContactsPage;

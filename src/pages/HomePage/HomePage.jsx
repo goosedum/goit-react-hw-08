@@ -1,9 +1,7 @@
+import css from './Homepage.module.css';
 
+const Homepage = () => {
+  return <h1 className={css.pageContainer}>Hi!</h1>;
+};
 
-const HomePage = () => {
-  return (
-    <div>Home</div>
-  )
-}
-
-export default HomePage
+export default Homepage;

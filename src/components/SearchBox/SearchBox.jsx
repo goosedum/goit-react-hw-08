@@ -1,26 +1,34 @@
+import css from './SearchBox.module.css';
+import { nanoid } from 'nanoid';
 
-import css from "./SearchBox.module.css"
-import { useDispatch, useSelector } from "react-redux";
-import { changeFilter, selectNameFilter } from "../../redux/filters/filtersSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFilter } from '../../redux/filters/slice';
+import { selectNameFilter } from '../../redux/filters/selectors';
 
 const SearchBox = () => {
+  const inputId = nanoid();
+
   const dispatch = useDispatch();
-  const filterValue = useSelector(selectNameFilter);
-  const handleContactSearch = (event) => {
-    dispatch(changeFilter(event.target.value));
+
+  const onSearchContact = event => {
+    const value = event.target.value;
+    dispatch(changeFilter(value));
   };
-   
+
+  const filterValue = useSelector(selectNameFilter);
+
   return (
-      <div className={css.searchBoxContainer}>
-          <h2>Find contacts by name</h2>
-          <input className={css.searchInput}
-              type="text"
-              name="name"
-              value={filterValue}
-              onChange={handleContactSearch}>
-            </input>
-      </div>
-  )
-}
+    <div className={css.searchContainer}>
+      <label htmlFor={inputId}>Find contacts by name</label>
+      <input
+        id={inputId}
+        type="text"
+        name="search"
+        onChange={onSearchContact}
+        value={filterValue}
+      />
+    </div>
+  );
+};
 
 export default SearchBox;

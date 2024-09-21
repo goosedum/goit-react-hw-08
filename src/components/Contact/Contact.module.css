@@ -1,31 +1,36 @@
-.contactItem{
-    width: 200px;
-    height: 36px;
-    border: 2px solid black;
-    border-radius: 8px;
-    padding: 8px;
+.contactContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    height: 40px;
+    justify-content: center;
+    min-width: 230px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    padding: 4px;
+    position: relative;
+}
+
+.deleteBtn {
+    display: flex;
     align-items: center;
-    
-}
-.contactItem:not(:last-child) {
-    
-    margin-bottom: 20px;
-}
-
-.contactBtnDel{
-width: 64px;    
-height: 28px;
-border: 2px solid grey;
-border-radius: 4px;
-background-color: aliceblue;
-font-size: 14px;
-cursor: pointer;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: inherit;
+    border: none;
+    width: 32px;
+    height: 32px;
 }
 
-.dataText{
-font-family: 'Arial';
-font-size: 14px;
+.userIcon {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+}
+
+.deleteIcon {
+    width: 24px;
+    height: 24px;
 }

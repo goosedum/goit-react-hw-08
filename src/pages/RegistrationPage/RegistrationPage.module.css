@@ -1,0 +1,6 @@
+.pageContainer {
+    padding: 80px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
