@@ -18,7 +18,6 @@
     border-radius: 8px;
     background-color: inherit;
     transition: color 200ms ease-in-out;
-    gap: 10px;;
 }
 
 .formBtn:hover {
@@ -26,12 +25,13 @@
 }
 
 .inputContainer {
-padding: 12px;
+padding: 36px;
     font-size: 18px;
     border: 1px solid gray;
     border-radius: 8px;
     outline: none;
     width: 250px
+    
 }
 
 .input:focus {
