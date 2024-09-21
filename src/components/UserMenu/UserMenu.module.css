@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     background-color: inherit;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 4px 8px;
     gap: 8px;
     transition: color 200ms ease-in-out;

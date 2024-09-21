@@ -17,7 +17,7 @@ const UserMenu = () => {
         toast.success('Logout was successful', {
           style: {
             border: '1px solid rgb(0, 106, 255)',
-            padding: '16px',
+            padding: '8px',
             color: 'rgb(0, 106, 255)',
           },
           iconTheme: {
