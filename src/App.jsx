@@ -12,7 +12,7 @@ import { Suspense } from 'react';
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 
-const HomePage = lazy(() => import('./pages/Homepage/Homepage'));
+const HomePage = lazy(() => import('./pages/Homepage/Homepage.jsx'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
 const RegistrationPage = lazy(() =>
