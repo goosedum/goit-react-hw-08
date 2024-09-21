@@ -7,12 +7,10 @@
     border: 1px solid black;
     border-radius: 8px;
     padding: 20px 12px;
-    align-items: center;
 }
 
 .formBtn {
     display: flex;
-    align-items: center;
     justify-content: center;
     padding: 4px 8px;
     width: 200px;
@@ -35,7 +33,7 @@ padding: 12px;
 }
 
 .input:focus {
-    outline: 1px solid #535bf2;
+    outline: 1px solid #646cff;
 }
 
 .errorMessage {
