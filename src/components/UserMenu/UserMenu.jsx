@@ -30,7 +30,6 @@ const UserMenu = () => {
 
   return (
     <>
-      <p className={css.welcomeText}>Hello, {user.name}</p>
       <button type="button" onClick={onLogout} className={css.logoutBtn}>
         Logout
         <IoLogOutOutline className={css.logoutIcon} />

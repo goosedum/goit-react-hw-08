@@ -1,17 +1,18 @@
 import { MagnifyingGlass } from 'react-loader-spinner';
 
-const Loader = () => {
-  return (
-    <MagnifyingGlass
-      visible={true}
-      height="80"
-      width="80"
-      ariaLabel="magnifying-glass-loading"
-      wrapperClass="magnifying-glass-wrapper"
-      glassColor="#c0efff"
-      color="blue"
-    />
-  );
-};
+const Loader = () => (
+  <RotatingLines
+    visible={true}
+    height="90"
+    width="90"
+    strokeColor="#0d00c3"
+    strokeWidth="4"
+    animationDuration="0.65"
+    ariaLabel="rotating-lines-loading"
+    wrapperStyle={{}}
+    wrapperClass=""
+  />
+);
+
 
 export default Loader;

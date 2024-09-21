@@ -15,11 +15,11 @@
 }
 
 .active {
-    color: rgb(9, 0, 141);
+    color:#0d00c3;
     text-decoration: none;
 }
 
 .link:hover {
-    color: rgb(89, 89, 89);
+    color: gray;
     text-decoration: underline;
 }
