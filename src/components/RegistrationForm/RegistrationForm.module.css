@@ -35,7 +35,7 @@
 .inputContainer {
 padding: 12px;
     font-size: 18px;
-    border: 1px solid rgba(0, 0, 0, 0.126);
+    border: 1px solid gray;
     border-radius: 8px;
     outline: none;
     width: 250px;
