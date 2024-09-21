@@ -31,7 +31,7 @@ padding: 12px;
     border-radius: 8px;
     outline: none;
     width: 250px;
-    align-items: center;
+    gap: 10px; ;
 }
 
 .input:focus {
