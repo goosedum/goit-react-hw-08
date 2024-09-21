@@ -25,13 +25,13 @@
 }
 
 .inputContainer {
-padding: 36px;
+padding: 12px;
     font-size: 18px;
     border: 1px solid gray;
     border-radius: 8px;
     outline: none;
-    width: 250px
-    
+    width: 250px;
+    align-items: center;
 }
 
 .input:focus {
