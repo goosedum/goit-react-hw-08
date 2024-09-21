@@ -21,15 +21,7 @@ a {
 a:hover {
   color: #606060;
 }
-.input {
-  width: 230px;
-  padding: 4px 4px;
-  font-size: 18px;
-  border: 1px solid gray;
-  border-radius: 8px;
-  outline: none;
-  background-color: rgba(0, 0, 0, 0.126);
-}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
