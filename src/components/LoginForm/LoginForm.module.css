@@ -21,7 +21,7 @@
 }
 
 .formBtn:hover {
-    color: #09008D;
+    color: #0d00c3;
 }
 
 .input {
@@ -46,7 +46,7 @@
 }
 
 .input:focus {
-    outline: 1px solid #09008D;
+    outline: 1px solid #0d00c3;
 }
 
 .errorMessage {
